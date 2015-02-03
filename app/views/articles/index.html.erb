@@ -1,0 +1,11 @@
+Index
+
+<ul>
+  <% @blogposts.each do |blogpost| %>
+    <li>
+
+      <%= link_to blogpost.title, blogpost %><br/>
+      <%= image_tag blogpost.photo_url, class: "thumb" %>
+    </li>
+  <% end %>
+</ul>
