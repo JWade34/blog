@@ -9,7 +9,7 @@ Index
       <%= link_to blogpost.title, blogpost %><br/>
       <!-- <%= image_tag blogpost.photo_url, class: "thumb" %> -->
 
-      <%= blogpost.published_on %>
+      <%= blogpost.published_on.strftime('Published on: %d-%m-%Y') %>
     </li>
   <% end %>
 </ul>
