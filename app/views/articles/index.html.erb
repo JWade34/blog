@@ -1,11 +1,15 @@
 Index
 
+<%= link_to "New Post", '/blogposts/new', class: "btn btn-default pull-right" %>
+
+
 <ul>
   <% @blogposts.each do |blogpost| %>
     <li>
-
       <%= link_to blogpost.title, blogpost %><br/>
-      <%= image_tag blogpost.photo_url, class: "thumb" %>
+      <!-- <%= image_tag blogpost.photo_url, class: "thumb" %> -->
+
+      <%= blogpost.published_on %>
     </li>
   <% end %>
 </ul>

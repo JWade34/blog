@@ -1,0 +1,26 @@
+<%= form_for @blogpost do |f| %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_field :body, class: "form-control"  %>
+  </div>
+
+  <!-- <div class="form-group">
+    <%= f.label :photo_url %>
+    <%= f.text_field :photo_url, class: "form-control"  %>
+  </div> -->
+
+  <div class="form-group">
+    <%= f.label :published_on %>
+    <%= f.date_select :published_on, class: "form-group"  %>
+  </div>
+
+  <div>
+    <%= f.submit class: "btn btn-success" %>
+  </div>
+<% end %>
