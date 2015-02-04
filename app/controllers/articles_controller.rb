@@ -22,4 +22,18 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+    @blogpost = Blogpost.find params[:id]
+  end
+
+  def update
+    @blogpost = Blogpost.find params[:id]
+    if @blogpost.update params.require(:blogpost).permit(:title, :body, :published_on)
+      redirect_to root_path
+    else
+      render :edit
+    end
+
+  end
+
 end

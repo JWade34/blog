@@ -1,15 +1,23 @@
-Index
+<div class="container">
+<h1> Index: </h1>
 
-<%= link_to "New Post", '/blogposts/new', class: "btn btn-default pull-right" %>
 
 
-<ul>
-  <% @blogposts.each do |blogpost| %>
-    <li>
-      <%= link_to blogpost.title, blogpost %><br/>
-      <!-- <%= image_tag blogpost.photo_url, class: "thumb" %> -->
+  <%= link_to "New Post", '/blogposts/new', class: "btn btn-danger pull-right" %>
 
-      <%= blogpost.published_on.strftime('Published on: %d-%m-%Y') %>
-    </li>
-  <% end %>
-</ul>
+
+    <% @blogposts.each do |blogpost| %>
+    <br>
+    <div class="post">
+      <!-- <%= blogpost.title %> -->
+        <h2>
+        <%= link_to blogpost.title, blogpost %>
+        </h2>
+        <!-- <%= image_tag blogpost.photo_url, class: "thumb" %> -->
+        <%= blogpost.published_on.strftime('Published on: %d-%m-%Y') %>
+        <%= link_to "Edit", edit_blogpost_path(blogpost) %>
+    <% end %>
+    </div>
+
+
+</div>
